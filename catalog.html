@@ -31,19 +31,23 @@
           <h2 class="visually-hidden">Фильтры для каталога</h2>
           <form class="filter" method="get" action="https://echo.htmlacademy.ru">
             <fieldset>
-              <legend>Стоимость</legend>
-              <div class="range-controls">
-                <div class="bar"></div>
-                <div class="toggle toggle-min">
-                  <span>от 0</span>
+              <legend>Стоимость:</legend>
+              <div class="range-filter">
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="toggle toggle-min"></div>
+                  <div class="toggle toggle-max"></div>
                 </div>
-                <div class="toggle toggle-max">
-                  <span>до 5000</span>
+                <div class="price-controls">
+                  <label class="min-price">от <input name="min-price" type="text" value="0"></label>
+                  <label class="max-price">до <input name="max-price" type="text" value="15 000"></label>
                 </div>
               </div>
             </fieldset>
             <fieldset>
-              <legend>Bluetooth</legend>
+              <legend>Сетка</legend>
               <ul class="filter-list">
                 <li>
                   <input class="visually-hidden filter-input filter-radio" type="radio" name="layout" value="adaptive" id="adaptive" checked>
@@ -84,7 +88,7 @@
                 </li>
               </ul>
             </fieldset>
-            <button class="button" type="submit">Показать</button>
+            <button class="button link type="submit">Показать</button>
           </form>
         </section>
 
@@ -153,10 +157,10 @@
             </li>
           </ul>
           <ul class="pagination-list">
-            <li><a>1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a class="next" href="#">Следующая</a></li>
+            <li><a class="button current">1</a></li>
+            <li><a class="button link" href="#">2</a></li>
+            <li><a class="button link" href="#">3</a></li>
+            <li><button class="button link" type="button">Следующая</button></li>
           </ul>
         </section>
       </div>
