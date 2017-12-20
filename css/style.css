@@ -72,6 +72,8 @@ input[type="radio"].visually-hidden {
 }
 
 .main-header {
+  width: 100%;
+  min-width: 1440px;
   padding-top: 49px;
 
   background-color: #eee;
@@ -161,6 +163,8 @@ input[type="radio"].visually-hidden {
 .slider {
   position: relative;
 
+  width: 100%;
+  min-width: 1440px;
   margin: -20px 0 80px;
 
   background-color: #eee;
@@ -171,8 +175,7 @@ input[type="radio"].visually-hidden {
 }
 
 .slider-item {
-  display: flex;
-  flex-direction: column;
+  display: none;
 
   width: 520px;
   min-height: 366px;
@@ -180,25 +183,93 @@ input[type="radio"].visually-hidden {
   padding-right: 640px;
 }
 
-.slider-item-one {
+.slider-item:nth-child(1) {
   background: url(../img/slide1.png) no-repeat 430px 23px;
-
 }
 
-.slider-item-two {
-  display: none;
-
+.slider-item:nth-child(2) {
   background: url(../img/slide2.png) no-repeat 496px 6px;
 }
 
-.slider-item-three {
-  display: none;
-
+.slider-item:nth-child(3) {
   background: url(../img/slide3.png) no-repeat 401px 25px;
 }
 
+.slider-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 104px;
+  z-index: 100;
+
+  width: 160px;
+  height: 18px;
+
+  text-align: center;
+  font-size: 0;
+  transform: translateX(-50%);
+}
+
+.slider-controls label {
+  position: relative;
+
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  padding: 8px;
+
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-controls label::after {
+  content: "";
+
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+
+  width: 18px;
+  height: 18px;
+
+  background: #ffffff;
+
+  border-radius: 50%;
+}
+
+#product-1:checked ~ .slider-list .slider-item:nth-child(1) {
+  display: block;
+}
+
+#product-2:checked ~ .slider-list .slider-item:nth-child(2) {
+  display: block;
+}
+
+#product-3:checked ~ .slider-list .slider-item:nth-child(3) {
+  display: block;
+}
+
+#product-1:checked ~ .slider-controls .slider-controls-item--1::before,
+#product-2:checked ~ .slider-controls .slider-controls-item--2::before,
+#product-3:checked ~ .slider-controls .slider-controls-item--3::before {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+
+  width: 4px;
+  height: 4px;
+  margin: -4px;
+
+  background-color: inherit;
+  border: 2px solid #c1c1c1;
+  border-radius: 50%;
+}
+
 .slider-item p {
-  margin: 13px 0;
+  margin: 13px 0 26px;
 }
 
 .lead b {
@@ -214,8 +285,6 @@ input[type="radio"].visually-hidden {
 
 .button {
   display: inline-block;
-  align-self: flex-start;
-
   padding: 16px 0;
 
   font-family: "Roboto Medium", "Arial", sans-serif;
@@ -232,7 +301,7 @@ input[type="radio"].visually-hidden {
 }
 
 .slider .button {
-  margin-top: 28px;
+  margin-top: 15px;
   padding: 16px 54px;
 }
 
@@ -246,13 +315,6 @@ input[type="radio"].visually-hidden {
 
   background-color: #d7373b;
   box-shadow: inset 0 3px rgba(193, 49, 53, .9);
-}
-
-.slider-control {
-  position: absolute;
-  bottom: 85px;
-  left: 50%;
-  z-index: 10;
 }
 
 .service-list {
@@ -501,35 +563,59 @@ input[type="radio"].visually-hidden {
 .contacts {
   position: relative;
 
-  width: 1440px;
-  margin: 0 auto;
+  min-width: 1440px;
+  height: 416px;
+
+  background-color: #e9e5dc;
 }
 
-.contacts::before {
+.contacts iframe {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  min-width: 1440px;
+
+  border: none;
+}
+
+.contacts .map {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 0;
+
+  width: 1440px;
+  height: 416px;
+  margin: 0;
+
+  transform: translateX(-50%);
+}
+
+ .contacts .map::before {
   content: "";
 
   position: absolute;
   top: 89px;
-  right: 388px;
+  left: 0;
+  z-index: 1;
 
   width: 231px;
   height: 190px;
+  margin-left: calc(100% / 2 + 100px);
 
   background: url(../img/map-marker.png) no-repeat 0 0;
-}
-
-.map-box {
-  margin: 0;
-  padding: 0;
 }
 
 .contacts-box {
   position: absolute;
   top: 54px;
-  left: 140px;
+  left: 0;
+  z-index: 1;
 
   width: 219px;
   height: 270px;
+  margin-left: calc(100% / 2 - 580px);
   padding: 26px 50px 11px;
 
   background-color: #fff;
@@ -565,7 +651,7 @@ input[type="radio"].visually-hidden {
 .social {
   display: flex;
 
-  margin: 60px auto;
+  margin: 68px auto 71px;
 }
 
 .social-list {
@@ -583,9 +669,9 @@ input[type="radio"].visually-hidden {
 
   display: block;
 
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
+  width: 79px;
+  height: 79px;
+  margin-right: 11px;
 }
 
 .social a::before {
@@ -595,8 +681,8 @@ input[type="radio"].visually-hidden {
   top: 0;
   left: 0;
 
-  width: 80px;
-  height: 80px;
+  width: 79px;
+  height: 79px;
 
   background: #e1e1e1 url("../img/vk-icon.svg") no-repeat center center;
   border-radius: 50%;
@@ -638,7 +724,7 @@ input[type="radio"].visually-hidden {
 }
 
 .slogan p {
-  margin: 8px 0;
+  margin: 6px 0 8px;
 }
 
 .slogan b {
@@ -646,11 +732,18 @@ input[type="radio"].visually-hidden {
   line-height: 36px;
 }
 
-.container h1 {
+.container header {
   width: 100%;
+  min-width: 1440px;
   margin: 0 auto;
   margin-bottom: 40px;
-  padding: 63px 54px 110px;
+  padding: 63px 0 110px;
+
+  background-color: #eee;
+}
+
+.container h1 {
+  margin: 0;
 
   font-family: "Roboto Medium", "Arial", sans-serif;
   font-size: 55px;
@@ -658,8 +751,6 @@ input[type="radio"].visually-hidden {
   font-weight: 500;
   text-align: center;
   color: #000;
-
-  background-color: #eee;
 }
 
 .inner-page {
@@ -760,17 +851,17 @@ input[type="radio"].visually-hidden {
 
 .price-controls input {
   width: 63px;
-  padding: 9px 9px;
   margin-left: 8px;
+  padding: 9px 9px;
 
   font-family: Roboto, Arial, sans-serif;
   font-size: 16px;
   text-align: center;
   color: #283136;
 
+  background: #f1f1f1;
   border: none;
   border-radius: 5px;
-  background: #f1f1f1;
 }
 
 .max-price {
@@ -841,7 +932,7 @@ input[type="radio"].visually-hidden {
 .filter-input:disabled + label {
   color: #000000;
 
-  opacity: 0.25;
+  opacity: .3;
 }
 
 .filter-input:hover + label::before,
@@ -983,8 +1074,8 @@ input[type="radio"].visually-hidden {
   background-color: #e9e9e9;
   background: url(../img/browser-light-gray.svg) no-repeat 0 0;
   box-shadow: 1px 1px 1px rgba(0, 1, 1, .1),
-               -1px -1px 1px rgba(0, 1, 1, .1);
-  border-radius: 4px;
+              -1px -1px 1px rgba(0, 1, 1, .1);
+  border-radius: 5px;
 }
 
 .catalog-box {

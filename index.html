@@ -26,28 +26,31 @@
     <main class="container">
       <section class="slider">
         <h2 class="visually-hidden">Немного о нас</h2>
+        <input class="visually-hidden" type="radio" id="product-1" name="toggle" checked>
+        <input class="visually-hidden" type="radio" id="product-2" name="toggle">
+        <input class="visually-hidden" type="radio" id="product-3" name="toggle">
+        <div class="slider-controls">
+          <label class="slider-controls-item slider-controls-item--1" for="product-1">Первый</label>
+          <label class="slider-controls-item slider-controls-item--2" for="product-2">Второй</label>
+          <label class="slider-controls-item slider-controls-item--3" for="product-3">Третий</label>
+        </div>
         <ul class="slider-list section-box">
-          <li class="slider-item slider-item-one">
+          <li class="slider-item">
             <p class="lead"><b>Долго, дорого, скрупулезно.</b></p>
             <p>Математически выверенный дизайн<br>для вашего сайта или мобильного приложения.</p>
             <a class="button" href="#">Узнать больше</a>
           </li>
-          <li class="slider-item slider-item-two">
+          <li class="slider-item">
             <p class="lead"><b>Любим математику как никто другой</b></p>
             <p>Никакого креатива, только математические формулы для расчета идеальных пропорций.</p>
             <a class="button" href="#">Узнать больше</a>
           </li>
-          <li class="slider-item slider-item-three">
+          <li class="slider-item">
             <p class="lead"><b>Только ночь, только хардкор</b></p>
             <p>Работать днем, как все? Мы против этого.<br>Ближе к полуночи работа только начинается.</p>
             <a class="button" href="#">Узнать больше</a>
           </li>
         </ul>
-        <div class="slider-control">
-          <label for="btn-1"><input id="btn-1" type="radio"></label>
-          <label for="btn-2"><input id="btn-2" type="radio"></label>
-          <label for="btn-3"><input id="btn-3" type="radio"></label>
-        </div>
       </section>
 
       <section class="service section-box">
@@ -116,7 +119,8 @@
     <footer class="main-footer">
       <section class="contacts">
         <h2 class="visually-hidden">Наш адрес на карте</h2>
-        <p class="map-box"><a class="map" href="#"><img src="img/map.png" alt="Санкт-Петербург, ул. Б. Конюшенная, д. 19/8" width="1440" height="416"></a></p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.59910436516!2d30.320894616058933!3d59.93879418187623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywg0KDQvtGB0YHQuNGPLCAxOTExODY!5e0!3m2!1sru!2sby!4v1513764730940" width="1440" height="416"  allowfullscreen></iframe>
+        <p class="map"><img src="img/map.png" alt="Санкт-Петербург, ул. Б. Конюшенная, д. 19/8" width="1440" height="416"></p>
         <div class="contacts-box">
           <h3>NЁRDS DESIGN STUDIO</h3>
           <p>191186, Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
